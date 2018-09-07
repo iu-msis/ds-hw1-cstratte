@@ -1,13 +1,14 @@
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css"href="dashboard.css">
 </head>
 <body>
   <h1>Colby's Social Media</h1>
-<table class="table">
+<table id="smtable" class="table">
   <thead>
     <tr>
       <th scope="col">Site</th>
-      <th scope="col">Hanle</th>
+      <th scope="col">Handle</th>
       <th scope="col">Favorite Follow</th>
     </tr>
   </thead>
@@ -33,5 +34,10 @@
 
 <input class="button" type="submit"
 name="homepage" id="sendrfp" value="Homepage">
-
+<script src="tablesort.min.js"></script>
+<script>
+//*https://github.com/tristen/tablesort/tree/gh-pages/dist
+  new Tablesort(document.getElementById('smtable'));
+</script>
+</body>
        </form>
