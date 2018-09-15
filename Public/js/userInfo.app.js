@@ -1,7 +1,7 @@
-
 var userInfo = new Vue({
   el: '#userInfo',
   data: {
+    test: "This is a test",
     result:
     {
       "gender": "",
@@ -39,7 +39,7 @@ var userInfo = new Vue({
         "age": 0
       },
       "registered": {
-        "date": "",
+        "date": "2015-11-04T22:09:36Z",
         "age": 0
       },
       "phone": "",
@@ -61,17 +61,21 @@ var userInfo = new Vue({
     "page": 1,
     "version": "1.2"
   }
+
   },
   computed: {
-    calculated_age: function () {
-      return moment(this.result.dob).diff(moment(), 'days')
+    calc_age: function () {
+      return moment().diff(moment(this.result.dob.date), 'years')
     }
   },
   methods: {
+    pretty_date: function (d) {
+      return moment(d).format('l')
+    },
     fetchProject () {
   fetch('https://randomuser.me/api/')
   .then( response => response.json() )
-  .then( json => {personalInfo.result = json.results[0]} )
+  .then( json => {userInfo.result = json.results[0]} )
   .catch( err => {
     console.log('PROJECT FETCH ERROR:');
     console.log(err);
@@ -80,5 +84,6 @@ var userInfo = new Vue({
   },
   created () {
       this.fetchProject();
+
     }
 })
