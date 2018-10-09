@@ -4,11 +4,22 @@ class Comment
 {
   public $id;
   public $comments;
-
-  public function __construct($row) {
+  public function __construct($row {
     $this->id = intval($row['id']);
+  $this->comments = $row['comment'];
+  }
 
-    $this->comments = $row['comment'];
+  public function create() {
+    $db = new PDO(DB_SERVER, DB_USER, DB_PW);
+
+    $sql = 'INSERT hw1 (comment)
+            VALUES (?)';
+
+    $statement = $db->prepare($sql);
+    $success = $statement->execute([
+      $this->comments
+    ]);
+    $this->id = $db->lastInsertId();
   }
 
   public static function responseComments() {
