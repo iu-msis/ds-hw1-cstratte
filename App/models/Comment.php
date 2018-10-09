@@ -31,7 +31,7 @@ class Comment
       // 4.a. For each row, make a new work object
       $comment =  new Comment($row);
 
-      var_dump($comment);
+      print_r($comment);
       die;
       array_push($commentarr, $comment);
     }
