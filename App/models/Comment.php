@@ -31,7 +31,7 @@ class Comment
       // 4.a. For each row, make a new work object
       $comment =  new Comment($row);
 
-      print($comment);
+      echo json_encode($comment);
       array_push($commentarr, $comment);
     }
     return $commentarr;

@@ -18,7 +18,7 @@ $id = intval($_GET['id'] ?? 0);
 $commentarr = Comment::responseComments();
 
 // 2. Convert to json
-$jason = json_encode($commentarr, JSON_PRETTY_PRINT);
+$json = json_encode($commentarr, JSON_PRETTY_PRINT);
 
 //3. Print
 header('Content-Type: application/json');
