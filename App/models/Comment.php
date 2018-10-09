@@ -34,7 +34,7 @@ class Comment
       echo json_encode($comment);
       array_push($commentarr, $comment);
     }
-    return $commentarr;
+    return $arr;
   }
 
 
