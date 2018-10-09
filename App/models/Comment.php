@@ -13,7 +13,7 @@ class Comment
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-    $sql = 'INSERT hw1 (comments)
+    $sql = 'INSERT INTO hw1 (comment)
             VALUES (?)';
 
     $statement = $db->prepare($sql);
