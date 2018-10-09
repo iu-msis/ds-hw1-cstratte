@@ -3,7 +3,7 @@
 require '../../App/common.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  require 'workPost.php';
+  require 'commentPost.php';
   exit;
 }
 
