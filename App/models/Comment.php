@@ -22,7 +22,7 @@ class Comment
 
     // 3. Run the query
     $success = $statement->execute(
-        [$id]
+        []
     );
 
     // 4. Handle the results
