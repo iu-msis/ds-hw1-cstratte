@@ -6,8 +6,8 @@ class Comment
   public $comments;
 
   public function __construct($row) {
-    $this->id = intval($row['id']);
-  $this->comments = $row['comment'];
+    $this->id = isset($row['id']) ? intval($row['id']) : null;
+    $this->comments = $row['comment'];
   }
 
   public function create() {
