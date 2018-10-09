@@ -9,6 +9,7 @@ class Comment
     $this->id = intval($row['id']);
 
     $this->comments = $row['comment'];
+  }
 
   public static function responseComments() {
     // 1. Connect to the database
