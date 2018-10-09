@@ -3,22 +3,22 @@
 class Comment
 {
   public $id;
-  public $comments;
+  public $comment;
 
   public function __construct($row) {
     $this->id = isset($row['id']) ? intval($row['id']) : null;
-    $this->comments = $row['comment'];
+    $this->comment = $row['comment'];
   }
 
   public function create() {
     $db = new PDO(DB_SERVER, DB_USER, DB_PW);
 
-    $sql = 'INSERT INTO hw1 (comments)
+    $sql = 'INSERT INTO hw1 (comment)
             VALUES (?)';
 
     $statement = $db->prepare($sql);
     $success = $statement->execute([
-      $this->comments
+      $this->comment
     ]);
     $this->id = $db->lastInsertId();
   }
