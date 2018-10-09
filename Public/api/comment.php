@@ -15,7 +15,7 @@ $id = intval($_GET['id'] ?? 0);
 
 
 // 1. Go to database and get work associated with task id
-$commentarr = Comment::getCommentById();
+$commentarr = Comment::responseComments();
 
 // 2. Convert to json
 $jason = json_encode($commentarr, JSON_PRETTY_PRINT);
